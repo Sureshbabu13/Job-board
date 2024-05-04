@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Board</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        #jobFilterForm {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        #jobFilterForm input,
+        #jobFilterForm button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #jobList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #jobList li {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+        }
+        footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">All Jobs</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Account</a>
+        <button>Post Job</button>
+    </nav>
+
+    <section>
+        <h2>Job Filter</h2>
+        <form id="jobFilterForm">
+            <input type="text" id="jobTitleInput" placeholder="Job Title">
+            <input type="text" id="locationInput" placeholder="Location">
+            <input type="text" id="ExperienceInput" placeholder="Experience">
+            
+            
+            <button type="submit">Search Now</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>All Jobs</h2>
+        <ul id="jobList">
+            <li> <a href="https://www.naukri.com/full-stack-developer-jobs">Full stack developer</a></li></li>
+            <li> <a href="https://www.naukri.com/web-developer-jobs">Web developer</a></li>
+            <li> <a href="https://in.linkedin.com/jobs/mern-stack-jobs?position=1&pageNum=0">Mern stack developer</a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 Job Board. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const jobForm = document.getElementById('jobForm');
+        const jobInput = document.getElementById('jobInput');
+        const jobList = document.getElementById('jobList');
+
+        jobForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const newJob = document.createElement('li');
+            newJob.textContent = jobInput.value;
+            jobList.appendChild(newJob);
+            jobInput.value = '';
+        });
+    </script>
+</body>
+</html>
